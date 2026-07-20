@@ -11,6 +11,7 @@ jobs:
       P4A_BUILD_TOOLS_VERSION: "30.0.3"
       P4A_NDK_VERSION: "25b"
       P4A_ANDROID_API: "31"
+      P4A_ACCEPT_SDK_LICENSE: "true"
 
     steps:
       - name: Checkout code

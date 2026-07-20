@@ -30,6 +30,11 @@ jobs:
             libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev git
           pip install cython==0.29.33 buildozer
 
+      - name: Accept Android SDK licenses
+        run: |
+          mkdir -p /home/runner/.android
+          yes | sdkmanager --licenses || true
+
       - name: Build APK
         run: |
           buildozer -v android debug

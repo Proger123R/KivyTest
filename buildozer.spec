@@ -8,7 +8,7 @@
 # (str) Title of your application
 title = My Penis
 
-android.build_tools = 30.0.3
+android.build-tools = 30.0.3
 
 # (str) Package name
 package.name = myapp

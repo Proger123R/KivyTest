@@ -17,18 +17,18 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Install libtinfo5 (legacy)
+        run: |
+          wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.2-0ubuntu2.1_amd64.deb
+          sudo dpkg -i libtinfo5_6.2-0ubuntu2.1_amd64.deb
+          sudo apt-get install -f -y
+
       - name: Install dependencies
         run: |
           
           sudo apt-get install -y openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev \
             libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev git
           pip install cython==0.29.33 buildozer
-
-      - name: Install libtinfo5 (legacy)
-        run: |
-          wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.2-0ubuntu2.1_amd64.deb
-          sudo dpkg -i libtinfo5_6.2-0ubuntu2.1_amd64.deb
-          sudo apt-get install -f -y
 
       - name: Build APK
         run: |
